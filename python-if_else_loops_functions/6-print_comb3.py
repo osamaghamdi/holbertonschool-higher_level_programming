@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-for i in range(10):
-    for j in range(i + 1, 10):
-        if i == 0 and j == 1:
-            print("{:02}, ".format(i * 10 + j), end="")
-        else:
-            print("{:02}".format(i * 10 + j), end=", " if (i < 9 or j < 9) else "")
+for n in range(10):
+    for i in range(10):
+        if (n is 8 and i is 9):
+            print("{}".format(str(n) + str(i)))
+        elif (i > n):
+            print("{}".format(str(n) + str(i)) + ", ", end="")
