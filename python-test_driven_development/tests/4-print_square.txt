@@ -1,0 +1,36 @@
+The 4-print_square module
+==========================
+
+Using print_square
+------------------
+
+Importing function from the module:
+
+    >>> print_square = __import__('4-print_square').print_square
+
+Printing a square of size 4:
+
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+Passing a negative size:
+
+    >>> print_square(-2)
+    Traceback (most recent call last):
+        ...
+    ValueError: size must be >= 0
+
+Passing a non-integer size:
+
+    >>> print_square("3")
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer
+
+Passing a size of 0:
+
+    >>> print_square(0)
+    (prints nothing)
