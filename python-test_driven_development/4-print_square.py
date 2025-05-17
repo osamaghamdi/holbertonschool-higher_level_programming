@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module is composed of a function that prints a square with the character #.
+This module is composed of a function that prints a square with the character
 """
 
 
@@ -25,7 +25,3 @@ def print_square(size):
 
     for i in range(size):
         print("#" * size)
-
-# Example usage
-if __name__ == "__main__":
-    print_square(4)  # Should print a 4x4 square of #
