@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-This module is composed of a function that prints a message.
+
+This module is composed by a function prints a message
+
 """
 
 
