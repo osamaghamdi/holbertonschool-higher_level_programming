@@ -1,0 +1,38 @@
+The 3-say_my_name module
+==========================
+
+Using say_my_name
+-----------------
+
+Importing function from the module:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Printing a name with both first and last names:
+
+    >>> say_my_name("John", "Doe")
+    My name is John Doe
+
+Printing a name with only a first name:
+
+    >>> say_my_name("Alice")
+    My name is Alice 
+
+Passing a number as first_name:
+
+    >>> say_my_name(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Passing a number as last_name:
+
+    >>> say_my_name("Bob", 456)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+Passing an empty last_name:
+
+    >>> say_my_name("Charlie", "")
+    My name is Charlie
