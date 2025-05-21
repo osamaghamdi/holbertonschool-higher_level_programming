@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a class Square with size validation."""
+"""Defines a Square class with size validation and area calculation."""
 
 
 class Square:
@@ -7,7 +7,7 @@ class Square:
 
     def __init__(self, size=0):
         """
-        Initialize a new Square.
+        Initialize a new Square instance.
 
         Args:
             size (int): The size of the square (default is 0).
@@ -23,7 +23,8 @@ class Square:
         self.__size = size
 
     def area(self):
-        """Calculate the area of the square.
+        """
+        Calculate and return the area of the square.
 
         Returns:
             int: The area of the square.
