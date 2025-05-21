@@ -9,3 +9,4 @@ class Square:
         """Initialize the square with a size"""
         self.__size = size
         """__size is a private instance attribute"""
+        
