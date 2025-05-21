@@ -22,7 +22,9 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        if not isinstance(position, tuple):
+        if not isinstance(position, tuple) or \
+           len(position) != 2 or \
+           not all(isinstance(num, int) and num >= 0 for num in position):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
@@ -65,15 +67,15 @@ class Square:
     
     def my_print(self):
         """
-        Print the square with the character #.
+        Prints the square with the character '#'.
 
-        If size is 0, print an empty line.
+        The square is printed at the position specified by the 'position' attribute.
+        If size is 0, prints an '-' line.
         """
         if self.__size == 0:
             print()
         else:
-            for i in range(self.__position[1]):
+            for _ in range(self.__position[1]):
                 print()
-            for i in range(self.__size):
-                print('-' * self.__position[0], end='')
-                print('#' * self.__size)
+            for _ in range(self.__size):
+                print("-" * self.__position[0] + "#" * self.__size)
