@@ -64,7 +64,7 @@ class Square:
             int: The area of the square.
         """
         return self.__size ** 2
-    
+
     def my_print(self):
         """
         Prints the square with the character '#'.
@@ -79,7 +79,7 @@ class Square:
                 print()
             for _ in range(self.__size):
                 print(" " * self.__position[0] + "#" * self.__size)
-                
+
     @property
     def position(self):
         """
@@ -89,7 +89,7 @@ class Square:
             tuple: The (x, y) position of the square.
         """
         return self.__position
-    
+
     @position.setter
     def position(self, value):
         """
