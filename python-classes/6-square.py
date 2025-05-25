@@ -11,7 +11,8 @@ class Square:
 
         Args:
             size (int): The size of the square (default is 0).
-            position (tuple): The (x, y) position of the square (default is (0, 0)).
+            position (tuple): The (x, y) position of
+            the square (default is (0, 0)).
 
         Raises:
             TypeError: If size is not an integer.
@@ -69,7 +70,8 @@ class Square:
         """
         Prints the square with the character '#'.
 
-        The square is printed at the position specified by the 'position' attribute.
+        The square is printed at the position specified by
+        the 'position' attribute.
         If size is 0, prints an '-' line.
         """
         if self.__size == 0:
@@ -99,7 +101,8 @@ class Square:
             value (tuple): The new (x, y) position of the square.
 
         Raises:
-            TypeError: If value is not a tuple of 2 positive integers.
+            TypeError: If value is not a tuple of
+            2 positive integers.
         """
         if not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(num, int) and num >= 0 for num in value):
             raise TypeError("position must be a tuple of 2 positive integers")
