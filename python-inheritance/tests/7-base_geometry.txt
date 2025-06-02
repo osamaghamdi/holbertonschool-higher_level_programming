@@ -1,61 +1,83 @@
-# 7-base_geometry.txt
+The ``1-my_list`` module
+======================
 
-===========================
-How to Use 7-base_geometry.py
-===========================
+Using ``MyList``
+-------------------
 
-This file demonstrates usage and behavior of the ``BaseGeometry`` class from ``7-base_geometry.py``.
+This is a text file in reStructuredText format. First import
+``MyList`` from the ``1-my_list`` module:
 
-Instantiation
-=============
+    >>> MyList = __import__('1-my_list').MyList
 
-You can instantiate ``BaseGeometry`` with no arguments:
+Now use it:
 
-::
+Test with positive numbers:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
 
-    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-    >>> bg = BaseGeometry()
-    >>> type(bg)
-    <class '7-base_geometry.BaseGeometry'>
+Test with negative numbers:
+    >>> my_list = MyList()
+    >>> my_list.append(-1)
+    >>> my_list.append(-4)
+    >>> my_list.append(-2)
+    >>> my_list.append(-3)
+    >>> my_list.append(-5)
+    >>> my_list.print_sorted()
+    [-5, -4, -3, -2, -1]
 
-area Method
-===========
+Test with mixed positive and negative numbers:
+    >>> my_list = MyList()
+    >>> my_list.append(-1)
+    >>> my_list.append(0)
+    >>> my_list.append(1)
+    >>> my_list.append(-2)
+    >>> my_list.append(2)
+    >>> my_list.print_sorted()
+    [-2, -1, 0, 1, 2]
 
-Calling the ``area`` method raises an Exception, as it is not implemented:
+Test with empty list:
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
 
-::
+Test with one element:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.print_sorted()
+    [1]
 
-    >>> bg.area()
-    Traceback (most recent call last):
-    Exception: area() is not implemented
+Test with duplicate values:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(2)
+    >>> my_list.append(1)
+    >>> my_list.append(3)
+    >>> my_list.append(2)
+    >>> my_list.print_sorted()
+    [1, 1, 2, 2, 3]
 
-integer_validator Method
-=======================
+Test inheritance from list:
+    >>> my_list = MyList()
+    >>> isinstance(my_list, list)
+    True
 
-The ``integer_validator(name, value)`` method checks if ``value`` is a positive integer.
+Test that MyList is a subclass of list:
+    >>> issubclass(MyList, list)
+    True
 
-If ``value`` is not an integer, it raises a TypeError:
-
-::
-
-    >>> bg.integer_validator("width", "3")
-    Traceback (most recent call last):
-    TypeError: width must be an integer
-
-If ``value`` is less than or equal to 0, it raises a ValueError:
-
-::
-
-    >>> bg.integer_validator("width", 0)
-    Traceback (most recent call last):
-    ValueError: width must be greater than 0
-
-    >>> bg.integer_validator("width", -5)
-    Traceback (most recent call last):
-    ValueError: width must be greater than 0
-
-If ``value`` is a positive integer, nothing happens:
-
-::
-
-    >>> bg.integer_validator("width", 5)
+Test with list initialization:
+    >>> my_list = MyList([3, 1, 4, 1, 5])
+    >>> my_list.print_sorted()
+    [1, 1, 3, 4, 5]
+    >>> print(my_list)
+    [3, 1, 4, 1, 5]
