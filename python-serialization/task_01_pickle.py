@@ -22,15 +22,18 @@ class CustomClass:
         
 def serialize(self, filename):
     """Serialize the object to a file using pickle."""
-    with open(filename, 'wb') as file:
-        pickle.dump(self, file)
+    try:
+        with open(filename, 'wb') as file:
+            pickle.dump(self, file)
+    except Exception as e:
+        pass
 
 @classmethod
 def deserialize(cls, filename):
     """Deserialize the object from a file using pickle."""
     try:
-        with open(filename, 'rb') as f:
-            obj = pickle.load(f)
+        with open(filename, 'rb') as file:
+            obj = pickle.load(file)
             if isinstance(obj, cls):
                 return obj
             return None
