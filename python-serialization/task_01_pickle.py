@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Dfine a CustomClass that can be serialized and deserialized using pickle."""
+"""Define a CustomObject that can be serialized and deserialized using pickle."""
 import pickle
 
 
-class CustomClass:
+class CustomObject:
     """A custom class with a simple attribute."""
     def __init__(self, value):
         """Initialize the class with a value."""
