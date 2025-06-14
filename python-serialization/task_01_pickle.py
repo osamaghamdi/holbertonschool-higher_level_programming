@@ -5,9 +5,6 @@ import pickle
 
 class CustomObject:
     """A custom class with a simple attribute."""
-    def __init__(self, value):
-        """Initialize the class with a value."""
-        self.value = value
 
     def __init__(self, name, age, is_student):
         self.name = name
